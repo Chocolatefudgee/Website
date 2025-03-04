@@ -1,73 +1,197 @@
-/* Reset some default styles */
-* {
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "poppins","sans-serif";
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+
+}
+
+
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-evenly; /* Evenly space out the items */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Body and general styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+li {
+    list-style-type: none;
+    margin: 0 10px; /* Adds horizontal spacing between items */
 }
 
-/* Header styles */
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+.logo {
+    width: 30px;
+    height: 30px;
+    filter: opacity(0.7);
 }
 
-header nav ul {
+.img1,
+.img2 {
+    width: 30px;
+    height: auto;
+    filter: opacity(0.7);
+}
+
+.img1:hover {
+    transform: scale(1.1); /* Slightly zoom the image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    opacity: 0.8; /* Make the image slightly transparent */
+    filter: brightness(1.2); 
+}
+
+.img2:hover {
+    transform: scale(1.1); /* Slightly zoom the image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    opacity: 0.8; /* Make the image slightly transparent */
+    filter: brightness(1.2); 
+}
+nav ul li{
     list-style: none;
-    text-align: center;
+    display: inline-block;
+    
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
+nav ul li a{
     text-decoration: none;
-    font-weight: bold;
+    color:aliceblue;
+    font-size: 17px;
 }
 
-/* Hero section */
-#hero {
-    background: #fff;
-    text-align: center;
-    padding: 50px 20px;
+.content{
+    text-align: center;  
+    padding: 40px 20px; /* Add space around the content */
 }
 
-#hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.content h1{
+    font-size: 6rem;
+    color: #FFB5C0 ;
+    font-weight: 200;
+    opacity: 0.8;
+    animation: colorChange 25s infinite ease-in-out; /* Longer, smoother animation */
+
 }
 
-#hero p {
-    font-size: 1.2em;
+@keyframes colorChange {
+    0% {
+        color: #FFB5E5; /* Soft Pink */
+    }
+    25% {
+        color: #D8A8FF; /* Light Lavender */
+    }
+    50% {
+        color: #A6E3A1; /* Soft Light Green */
+        filter:opacity(0.8);
+    }
+    75% {
+        color: #D0E8FF; /* Light Sky Blue */
+    }
+    100% {
+        color: #FFB5E5; /* Soft Pink (loop back to original) */
+    }
 }
 
-/* Main content sections */
-section {
-    padding: 20px;
-    margin: 20px 0;
-    background: #fff;
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Space between buttons */
 }
 
-section h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    color:#fff;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    padding: 4px 10px;
+    border-radius: 50px;
+    margin-top: 50px;
+
+
 }
 
-/* Footer styles */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fff;
+.btn {
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+  }
+  
+  .btn {
+    width: 150px;
+    height: auto;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, #fb9eda 0%, #D8A8FF 100%);
+    box-shadow: 0 20px 30px -6px #ffb5e596;
+    filter:brightness(0.75);
+    opacity: 0.8;
+    
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .btn:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+  
+  .btn:active {
+    opacity: 0.5;
+  }
+
+
+  
+
+.backvideo{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .backvideo{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .backvideo{
+        width: auto;
+        height: 100%;
+    }
 }
